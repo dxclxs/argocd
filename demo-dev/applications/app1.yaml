@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app1
+  namespace: argocd
+spec:
+  destination:
+    name: in-cluster
+    namespace: app1
+  source:
+    path: "HelmCharts/MyChart1"
+    repoURL: "git@github.com:dxclxs/argocd.git"
+    targetRevision: main
+    helm:
+      valuesFiles:
+        - values_dev.yaml
+      parameters:
+        - name: "container.image"
+          value: adv4000/app1:v1
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
