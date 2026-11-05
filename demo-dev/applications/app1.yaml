@@ -1,22 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app1
+  name: nginx-app
   namespace: argocd
 spec:
   destination:
     name: in-cluster
     namespace: app1
   source:
-    path: "HelmCharts/MyChart1"
+    path: "HelmCharts/openresty-art"
     repoURL: "git@github.com:dxclxs/argocd.git"
     targetRevision: main
     helm:
       valuesFiles:
-        - values_dev.yaml
-      parameters:
-        - name: "container.image"
-          value: adv4000/app1:v1
+        - nginx-values.yaml
   project: default
   syncPolicy:
     automated:
