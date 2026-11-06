@@ -1,20 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root
+  name: kuber
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    name: in-cluster
-    namespace: argocd
+  project: development
   source:
-    path: "demo-dev/applications"
-    repoURL: "git@github.com:dxclxs/argocd.git"
+    repoURL: "https://github.com/dxclxs/argocd.git"
     targetRevision: main
-  project: default
+    path: /dev/kuber
+  destination:
+    server: in-cluster
+    namespace: kuber
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
