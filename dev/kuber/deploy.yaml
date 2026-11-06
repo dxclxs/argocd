@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: kuber-app
-          image: bakavets/kuber:v1.0
+          image: nginx
           ports:
-            - containerPort: 8000
+            - containerPort: 80
