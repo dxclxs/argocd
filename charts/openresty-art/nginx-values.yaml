@@ -17,7 +17,7 @@ application:
     readinessProbe:
       httpGet:
         path: /index.html
-        port: htpp
+        port: http
       initialDelaySeconds: 5
       periodSeconds: 15
     livenessProbe:
