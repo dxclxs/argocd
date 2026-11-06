@@ -11,9 +11,9 @@ spec:
     repoURL: https://github.com/dxclxs/argocd.git
     targetRevision: main
     path: charts/openresty-art
-  helm:
-    valueFiles:
-      - nginx-values.yaml
+    helm:
+      valueFiles:
+        - nginx-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: demo
