@@ -13,7 +13,7 @@ spec:
     path: charts/openresty-art
     helm:
       valueFiles:
-        - nginx-values.yaml
+        - openresty-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: demo

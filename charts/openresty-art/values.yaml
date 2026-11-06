@@ -18,7 +18,7 @@ application:
   # Параметры образа контейнера
   image:
     repository: openresty/openresty
-    tag: ""
+    tag: "1.27.1.2-13-alpine-fat"
     pullPolicy: IfNotPresent
   probes:
     readinessProbe:

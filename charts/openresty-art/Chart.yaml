@@ -3,7 +3,7 @@ name: web-server
 description: My vision openresty appplication
 type: application
 version: 0.1.0
-appVersion: "1.19.9.1-5-centos-rpm"
+appVersion: "1.27.1.2-13-alpine-fat"
 kubeVersion: ">= 1.19.0"
 
 home: https://github.com/dxclxs/devrep.git
